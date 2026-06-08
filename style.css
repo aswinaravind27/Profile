@@ -1,0 +1,263 @@
+:root {
+  color-scheme: dark;
+  --bg: #08121f;
+  --surface: #11203a;
+  --surface-strong: #1c2a48;
+  --text: #e6eef7;
+  --muted: #9bb3cf;
+  --accent: #6ec1ff;
+  --accent-strong: #4da4e8;
+  --shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, rgba(110, 193, 255, 0.15), transparent 35%),
+    linear-gradient(180deg, #07101e 0%, #091424 100%);
+  color: var(--text);
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.page-wrapper {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 48px;
+}
+
+.hero-section {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  min-height: 84vh;
+}
+
+.hero-content {
+  max-width: 620px;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.85rem;
+}
+
+.hero-section h1 {
+  margin: 0;
+  font-size: clamp(3rem, 4.8vw, 5rem);
+  line-height: 0.95;
+}
+
+.hero-description {
+  margin: 24px 0 32px;
+  max-width: 620px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 22px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #07101e;
+}
+
+.button-secondary {
+  border-color: rgba(110, 193, 255, 0.3);
+  color: var(--text);
+}
+
+.hero-visual {
+  min-height: 420px;
+  background: linear-gradient(135deg, rgba(110, 193, 255, 0.18), rgba(5, 18, 36, 0.88));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 32px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-visual::before,
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(46px);
+}
+
+.hero-visual::before {
+  width: 220px;
+  height: 220px;
+  background: rgba(110, 193, 255, 0.4);
+  top: -40px;
+  right: -40px;
+}
+
+.hero-visual::after {
+  width: 180px;
+  height: 180px;
+  background: rgba(128, 255, 190, 0.2);
+  bottom: -40px;
+  left: -30px;
+}
+
+.section {
+  margin-top: 64px;
+  padding: 36px 36px 40px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+
+.section h2 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 2rem;
+}
+
+.content-grid {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 1.5fr 1fr;
+}
+
+.profile-card {
+  padding: 24px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.profile-card h3 {
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+.profile-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.profile-card li {
+  margin-bottom: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.skills-grid,
+.project-list {
+  display: grid;
+  gap: 20px;
+}
+
+.skill-card,
+.project-card,
+.contact-card {
+  padding: 24px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.skill-card h3,
+.project-card h3 {
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.contact-card {
+  display: grid;
+  gap: 12px;
+}
+
+.contact-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+@media (max-width: 900px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-wrapper {
+    width: calc(100% - 24px);
+    padding: 24px 0 36px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .section {
+    padding: 24px;
+  }
+}
