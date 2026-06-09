@@ -1,4 +1,5 @@
-const words = ["Software Programming.", "UI/UX Design.", "Full-Stack Development."];
+// --- 1. TERMINAL TYPEWRITER LOOP ---
+const words = ["Software Programming.", "UI/UX Design.", "Full-Stack Development.", "AI Engineering."];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -31,4 +32,27 @@ function type() {
   setTimeout(type, speed);
 }
 
-document.addEventListener("DOMContentLoaded", type);
+// --- 2. LIVE TIME-BASED GREETING ---
+function setDynamicGreeting() {
+  const greetingElement = document.querySelector(".eyebrow");
+  if (!greetingElement) return;
+
+  const hours = new Date().getHours();
+  let greetingText = "Hello";
+
+  if (hours < 12) {
+    greetingText = "Good morning";
+  } else if (hours < 18) {
+    greetingText = "Good afternoon";
+  } else {
+    greetingText = "Good evening";
+  }
+
+  greetingElement.textContent = `${greetingText}, I'm`;
+}
+
+// --- LOAD FUNCTIONS INSTANTLY ---
+document.addEventListener("DOMContentLoaded", () => {
+  type();
+  setDynamicGreeting();
+});
