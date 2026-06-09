@@ -1,5 +1,5 @@
 // --- 1. TERMINAL TYPEWRITER LOOP ---
-const words = ["Software Programming.", "UI/UX Design.", "Full-Stack Development.", "AI Engineering."];
+const words = ["Software Programming.", "UI/UX Design.", "Full-Stack Development."];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
