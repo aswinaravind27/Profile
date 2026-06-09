@@ -14,7 +14,7 @@ A modern, responsive, dark-themed developer portfolio website built from scratch
 
 ## 📬 Contact
 - **Email:** [aswinaravind27@gmail.com](mailto:aswinaravind27@gmail.com)
-- **LinkedIn:** [://linkedin.com](https://www.://linkedin.com/in/aswinaravind27/)
+- **LinkedIn:** [linkedin.com](https://linkedin.com/in/aswinaravind27/)
 
 ---
 License: [MIT](LICENSE)
