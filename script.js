@@ -55,4 +55,32 @@ function setDynamicGreeting() {
 document.addEventListener("DOMContentLoaded", () => {
   type();
   setDynamicGreeting();
+  // Mobile nav toggle behavior
+  const navToggle = document.querySelector('.nav-toggle');
+  const navbar = document.querySelector('.navbar');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (navToggle && navbar) {
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navbar.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navbar.contains(e.target) && navbar.classList.contains('open')) {
+        navbar.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', false);
+      }
+    });
+
+    // Close on nav link click
+    if (navLinks) {
+      navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        navbar.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', false);
+      }));
+    }
+  }
 });
