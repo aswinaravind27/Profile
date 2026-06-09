@@ -365,8 +365,8 @@ a:hover {
 
 
 .nav-links {
-  display: flex;
-  list-style: none;
+  display: flex !important;
+  list-style: none !important;
   gap: 24px;
   margin: 0;
   padding: 0;
